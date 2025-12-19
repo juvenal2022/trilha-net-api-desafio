@@ -12,7 +12,7 @@ using TrilhaApiDesafio.Context;
 namespace trilha_net_api_desafio.Migrations
 {
     [DbContext(typeof(OrganizadorContext))]
-    [Migration("20251218204207_CriacaoTabelaTarefa")]
+    [Migration("20251219112538_CriacaoTabelaTarefa")]
     partial class CriacaoTabelaTarefa
     {
         /// <inheritdoc />
@@ -40,8 +40,9 @@ namespace trilha_net_api_desafio.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("ENUM('Pendente', 'Finalizado')");
 
                     b.Property<string>("Titulo")
                         .IsRequired()

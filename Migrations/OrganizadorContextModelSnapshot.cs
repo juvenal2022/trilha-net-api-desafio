@@ -37,8 +37,9 @@ namespace trilha_net_api_desafio.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("Status")
-                        .HasColumnType("int");
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("ENUM('Pendente', 'Finalizado')");
 
                     b.Property<string>("Titulo")
                         .IsRequired()
